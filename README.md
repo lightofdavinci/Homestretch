@@ -6,7 +6,7 @@ git clone https://github.com/lightofdavinci/Homestretch.git
 ```
 
 ```
-cd homestretch
+cd Homestretch
 ```
 
 ```

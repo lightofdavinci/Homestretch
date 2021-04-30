@@ -11,7 +11,7 @@ export default {
   namespaced: true,
   state: () => ({
     date: [new Date().toISOString().substring(0, 10)],
-    originDate: [],
+    originDate: [new Date().toISOString().substring(0, 10)],
     loading: true,
     dialog: {
       show: false,
@@ -28,7 +28,8 @@ export default {
     GET_DATES ({ commit }) {
       fetchJSON('http://test.unit.homestretch.ch', { method: 'GET' })
         .then((data) => {
-          commit('SET_DATE', data)
+          commit('SET_DATE', [...data])
+          commit('SET_ORIGIN_DATE', [...data])
           commit('SET_LOADING', false)
         })
         .catch(error => {
