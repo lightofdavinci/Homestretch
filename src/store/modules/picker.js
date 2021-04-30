@@ -41,6 +41,8 @@ export default {
     POST_DATES ({ state, commit }) {
       const newDates = state.date
       if (newDates.length === 0) { return }
+      // note: while testing I noticed that the server has a limit 10 date saves
+
       commit('SET_LOADING', true)
 
       const oldDates = state.originDate
