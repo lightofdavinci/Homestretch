@@ -56,7 +56,7 @@ export default {
       newDates.forEach(date => { postData.push({ date, value: true }) })
 
       // to decrease the amount of API calls compare if same dates were selected
-      if (oldDates.length === postData.length && postData.every(item => item.value)) {
+      if (oldDates.length === postData.length) {
         commit('SET_LOADING', false)
         return
       }
